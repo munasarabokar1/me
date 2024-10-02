@@ -33,8 +33,9 @@ bot.on("message:text", (ctx) => __awaiter(void 0, void 0, void 0, function* () {
             return result;
         });
     }
-    query({ "question": "Hey, how are you?" }).then((response) => {
+    query({ "question": ctx.message.text }).then((response) => {
         console.log(response);
+        ctx.reply(response.text);
     });
 }));
 bot.start();
